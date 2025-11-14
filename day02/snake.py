@@ -88,8 +88,7 @@ while running:
         # Fill the surface
     display_surface.fill(WHITE)
         # Blit HUD
-    display_surface.blit(title_text, title_rect)
-    display_surface.blit(score_Text, score_rect)
+
         # Blit assets
     pygame.draw.rect(display_surface, GREEN, Head_coord)
     pygame.draw.rect(display_surface, RED, apple_rect)

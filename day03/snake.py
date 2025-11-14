@@ -56,6 +56,8 @@ pick_up_sound = pygame.mixer.Sound("pick_up_sound.wav")
 apple_coord = (500, 500, SNAKE_SIZE, SNAKE_SIZE)
 apple_rect = pygame.draw.rect(display_surface, RED, apple_coord)
 
+Head_coord = (head_x, head_y, SNAKE_SIZE, SNAKE_SIZE)
+Head_rect = pygame.draw.rect(display_surface, GREEN, Head_coord)
 
 # The main game loop
 running = True
@@ -77,14 +79,17 @@ while running:
     # Check for collisions
 
     # Update HUD
-
+   Score_text = font.render(f"Score: " + str(score), True, GREEN, DARKRED)
     # Fill the surface
-
+    display_surface.fill(WHITE)
     # Blit HUD
-
+    display_surface.blit(title_text, title_rect)
+    display_surface.blit(score_Text, score_rect)
     # Blit assets
-
+    pygame.draw.rect(display_surface, GREEN, Head_coord)
+    pygame.draw.rect(display_surface, RED, apple_rect)
     # Update display and tick clock
-
+  pygame.display.update()
+    clock.tick(FPS)
 # End the game
 pygame.quit()
