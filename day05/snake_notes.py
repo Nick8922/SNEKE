@@ -110,7 +110,7 @@ while running:
     if head_rect.left < 0 or head_rect.right > WINDOW_WIDTH or head_rect.top < 0 or head_rect.bottom > WINDOW_HEIGHT or head_coord in body_coords:
         # TODO: call display_surface's blit function passing in game_over_text and game_over_rect
         # TODO: repeat for continue
-        # TODO: call pygame.display_update()
+        # TODO: call pygame.display.update()
 
         #Pause the game until the player presses a key, then reset the game
         # TODO: assign True to is_paused
