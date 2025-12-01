@@ -39,8 +39,8 @@ title_rect = title_text.get_rect()  # gets the box containing the text object
 title_rect.center = (WINDOW_WIDTH // 2,
                      WINDOW_HEIGHT // 2)  # places the box containing the text object's center to the middle of the screen.
 
-score_Text = font.render("Score: " + str(score), True, GREEN, DARKRED)
-score_rect = score_Text.get_rect()
+score_text = font.render("Score: " + str(score), True, GREEN, DARKRED)
+score_rect = score_text.get_rect()
 score_rect.topleft = (10, 10)
 
 game_over_text = font.render("Game Over!", True, RED, DARKRED)
@@ -123,7 +123,7 @@ while running:
                 body_coords = []
                 is_paused = False
 
-        # Check for collisions
+    # Check for collisions
     if head_rect.colliderect(apple_rect):
         score += 1
         pick_up_sound.play()
@@ -135,12 +135,12 @@ while running:
         body_coords.append(head_coord)
 
     # Update HUD
-    Score_text = font.render(f"Score: " + str(score), True, GREEN, DARKRED)
+    score_text = font.render(f"Score: " + str(score), True, GREEN, DARKRED)
     # Fill the surface
     display_surface.fill(WHITE)
     # Blit HUD
     display_surface.blit(title_text, title_rect)
-    display_surface.blit(score_Text, score_rect)
+    display_surface.blit(score_text, score_rect)
     #Blit assets
     for body in body_coords:
         pygame.draw.rect(display_surface, DARKGREEN, body)
